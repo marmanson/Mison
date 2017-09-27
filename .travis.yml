@@ -16,10 +16,12 @@ addons:
       - cmake-data
       - cmake
       - clang-3.8
+      - lcov
+      - gcovr
 script:
   - mkdir build && cd build
   - cmake .. && make
   - ./main-test
 
 after_success:
-  - coveralls --gcov-options '\-lp'
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
