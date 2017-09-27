@@ -11,7 +11,6 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/third/googletest/)
 
 set(SOURCE_DIR src/type.h src/Bit.h src/Bit.cc)
 add_library(Mison ${SOURCE_DIR})
-#add_executable(Mison ${SOURCE_DIR})
 
 #gtest
 enable_testing()
