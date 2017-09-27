@@ -13,9 +13,9 @@ set(SOURCE_DIR src/type.h src/Bit.h src/Bit.cc)
 add_library(Mison ${SOURCE_DIR})
 
 #gtest
-enable_testing()
+#enable_testing()
 set(GTEST_FILES tests/test_Bit.cc tests/main-test.cc)
 add_executable(main-test ${GTEST_FILES})
 target_link_libraries(main-test gtest)# gtest_main)
 target_link_libraries(main-test Mison)
-add_test(maintest main-test)
+#add_test(maintest main-test)
