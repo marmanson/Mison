@@ -3,6 +3,9 @@ compiler:
   - clang
 os:
   - linux
+install:
+  - sudo pip install cpp-coveralls
+
 addons:
   apt:
     sources:
@@ -17,3 +20,6 @@ script:
   - mkdir build && cd build
   - cmake .. && make
   - ./main-test
+
+after_success:
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
