@@ -22,4 +22,4 @@ script:
   - ./main-test
 
 after_success:
-  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+  - coveralls --gcov-options '\-lp'
