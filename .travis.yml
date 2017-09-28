@@ -27,7 +27,7 @@ after_success:
     # Creating report
   - cd ${TRAVIS_BUILD_DIR}/
   - pwd
-  - cd CMakeFiles/Mison.dir/src
+  - cd CMakeFiles/main-test.dir/tests
   - pwd
   - ls
   - codecov
