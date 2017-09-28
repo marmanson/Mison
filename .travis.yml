@@ -1,12 +1,15 @@
 language: cpp
 compiler:
-  - clang
+  - g++
 
 os:
   - linux
 
 install:
   - sudo pip install codecov
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-4.9 90
 
 env:
   global:
@@ -15,14 +18,11 @@ env:
 addons:
   apt:
     sources:
-      - george-edison55-precise-backports
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.8
     packages:
       - cmake-data
       - cmake
       - g++
-      - lcov
 script:
   - cmake . && make
   - ./main-test
@@ -32,4 +32,6 @@ after_success:
   - cd ${TRAVIS_BUILD_DIR}/
   - pwd
   - cd CMakeFiles/Mison.dir/src
+  - pwd
+  - ls
   - codecov
