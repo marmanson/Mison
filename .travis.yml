@@ -31,5 +31,5 @@ after_success:
     # Creating report
   - cd ${TRAVIS_BUILD_DIR}/
   - pwd
-  - ./get_codecov.sh
+  - cd CMakeFiles/Mison.dir/src
   - codecov
