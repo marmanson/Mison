@@ -32,4 +32,4 @@ after_success:
   - cd CMakeFiles/main-test.dir/tests
   - pwd
   - ls
-  - codecov
+  - codecov --gcov-exec main-test
