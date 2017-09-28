@@ -4,7 +4,7 @@ project(Mison)
 
 set(CMAKE_CXX_COMPILE clang++)
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-msse -ftest-coverage -fprofile-arcs")
+set(CMAKE_CXX_FLAGS "-msse -ftest-coverage -fprofile-arcs -lgcov --coverage")
 
 include_directories(${CMAKE_SOURCE_DIR}/src/ ${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/third/googletest/include/)
 add_subdirectory(${CMAKE_SOURCE_DIR}/third/googletest/)
