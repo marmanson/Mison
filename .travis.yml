@@ -1,9 +1,12 @@
 language: cpp
 compiler:
   - clang
+
 os:
   - linux
 
+install: 
+  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 env:
   global:
     - CODECOV_TOKEN=:fdb70632-da6f-49b5-83ca-74458a09059d
