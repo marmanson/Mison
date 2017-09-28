@@ -5,8 +5,6 @@ compiler:
 os:
   - linux
 
-install: 
-  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 env:
   global:
     - CODECOV_TOKEN=:fdb70632-da6f-49b5-83ca-74458a09059d
@@ -31,6 +29,7 @@ after_success:
     # Creating report
   - cd ${TRAVIS_BUILD_DIR}/
   - pwd
+  - gcov -v
   - lcov --directory . --capture --output-file coverage.info # capture coverage info
   - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter out system
   - lcov --list coverage.info #debug info
