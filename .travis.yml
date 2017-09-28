@@ -21,7 +21,7 @@ addons:
     packages:
       - cmake-data
       - cmake
-      - clang-3.8
+      - g++
       - lcov
 script:
   - cmake . && make
