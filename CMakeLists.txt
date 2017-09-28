@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(Mison)
 
-set(CMAKE_CXX_COMPILE clang++)
+#set(CMAKE_CXX_COMPILE clang++)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-msse -ftest-coverage -fprofile-arcs -lgcov")
 
@@ -16,6 +16,6 @@ add_library(Mison ${SOURCE_DIR})
 #enable_testing()
 set(GTEST_FILES tests/test_Bit.cc tests/main-test.cc)
 add_executable(main-test ${GTEST_FILES})
-target_link_libraries(main-test gtest)# gtest_main)
+target_link_libraries(main-test gtest gtest_main)
 target_link_libraries(main-test Mison)
 #add_test(maintest main-test)
