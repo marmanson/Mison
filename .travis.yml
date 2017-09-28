@@ -4,6 +4,10 @@ compiler:
 os:
   - linux
 
+env:
+  global:
+    - CODECOV_TOKEN=:fdb70632-da6f-49b5-83ca-74458a09059d
+
 addons:
   apt:
     sources:
