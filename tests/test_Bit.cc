@@ -21,15 +21,13 @@ TEST(Bit, Bit_bitmap2) {
 }
 
 TEST(Bit, Bit_bitmap3) {
-  string str;
-  ifstream fin("../tests/test.json");
-  fin>>str;
+  string str = "{\"id\":\"id:\\\"a\\\"\"}";
   BitMap bits = meng::Building_Character_Bitmaps(str, '}');
   ASSERT_EQ(1, (bits[0] >> (64 - 17)));
   bits = meng::Building_Character_Bitmaps(str, '{');
   ASSERT_EQ((1<<16), (bits[0] >> (64 - 17)));
-  //bits = meng::Building_Character_Bitmaps(str, '\\');
-  //ASSERT_EQ(((1<<3) + (1<<6)), (bits[0] >> (64 - 17)));
+  bits = meng::Building_Character_Bitmaps(str, '\\');
+  ASSERT_EQ(((1<<3) + (1<<6)), (bits[0] >> (64 - 17)));
 }
 
 TEST(Bit, Bit_R) {
