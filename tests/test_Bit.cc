@@ -24,7 +24,8 @@ TEST(Bit, Bit_bitmap3) {
   string str = "{\"id\":\"id:\\\"a\\\"\"}";
   BitMap bits = meng::Building_Character_Bitmaps(str, '}');
   ASSERT_EQ(1, (bits[0] >> (64 - 17)));
-  bits = meng::Building_Character_Bitmaps(str, '{');
+  
+  bits = meng::Building_Character_Bitmaps(str , '{');
   ASSERT_EQ((1<<16), (bits[0] >> (64 - 17)));
   bits = meng::Building_Character_Bitmaps(str, '\\');
   ASSERT_EQ(((1<<3) + (1<<6)), (bits[0] >> (64 - 17)));
