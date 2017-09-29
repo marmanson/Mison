@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "-msse -ftest-coverage -fprofile-arcs -lgcov")
 include_directories(${CMAKE_SOURCE_DIR}/src/ ${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/third/googletest/include/)
 add_subdirectory(${CMAKE_SOURCE_DIR}/third/googletest/)
 
-set(SOURCE_DIR src/type.h src/Bit.h src/Bit.cc)
+set(SOURCE_DIR src/Bit.cc)
 add_library(Mison ${SOURCE_DIR})
 
 #gtest
