@@ -19,9 +19,6 @@ public:
     size_t length() {
         return bits.size();
     }
-    void push(i64 sta) {
-        this->bits.push_back(sta);
-    }
     const i64& operator[](size_t i) {
         return bits[i];
     }

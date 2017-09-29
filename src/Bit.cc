@@ -16,7 +16,7 @@ string BitMap::to_string() {
     return res;
 }
 
-i64 set_full_bitmap(const string &str, int index, u8 ch, i64 &sta) {
+void set_full_bitmap(const string &str, int index, u8 ch, i64 &sta) {
     sta = sta | ((i64(!(str[index + 0] ^ ch))) << 0);
     sta = sta | ((i64(!(str[index + 1] ^ ch))) << 1);
     sta = sta | ((i64(!(str[index + 2] ^ ch))) << 2);
@@ -81,14 +81,12 @@ i64 set_full_bitmap(const string &str, int index, u8 ch, i64 &sta) {
     sta = sta | ((i64(!(str[index + 61] ^ ch))) << 61);
     sta = sta | ((i64(!(str[index + 62] ^ ch))) << 62);
     sta = sta | ((i64(!(str[index + 63] ^ ch))) << 63);
-    return sta;
 }
 
-i64 set_part_bitmap(const string &str, int index, u8 ch, i64 &sta) {
+void set_part_bitmap(const string &str, int index, u8 ch, i64 &sta) {
     for(int i=index; i<str.length(); i++) {
         sta = sta | (((i64(!(str[i] ^ ch))) << (i - index)));
     }
-    return sta;
 }
 
 BitMap Building_Structural_Character_Bitmaps(const string &str, u8 ch) {
